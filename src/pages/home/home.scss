@@ -1,0 +1,31 @@
+page-home {
+  .main-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    .second-bar {
+      display: flex;
+      flex-direction: row;
+      ion-input {
+        flex: 5;
+        background-color: white;
+        border-radius: 64px;
+      }
+    }
+    .third-bar {
+      display: flex;
+      flex-direction: row;
+      ion-input {
+        flex: 5;
+        background-color: white;
+        border-radius: 64px;
+      }
+    }
+  }
+  .booking-item {
+
+    
+    
+  }
+}

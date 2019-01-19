@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Administrador</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <form [formGroup]="form">
+      <div class="main-bar">
+        <div class="second-bar">
+          <ion-input formControlName="email" placeholder="Email for query"></ion-input>
+        </div>
+        <button ion-button round small (click)="search()">Buscar</button>
+        <div class="third-bar">
+          <ion-input type="number" placeholder="Introduzca precio minimo" #minPrice></ion-input>
+          <ion-input type="number" placeholder="Introduzca precio maximo" #maxPrice></ion-input>
+        </div>
+        <button ion-button round small (click)="searchPrice(minPrice.value, maxPrice.value)">Buscar por precios</button>
+      </div>
+    </form>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-searchbar [(ngModel)]="searchTerm" [placeholder]="'Filtrar por ID'" (ionInput)="setFilteredItems()"></ion-searchbar>
+    <div *ngIf="bookings.length > 0  || firstSearch; else noResults">
+    <ion-item text-wrap class="booking-item" *ngFor="let booking of bookings">
+      <p>BookingId: {{booking.bookingId}}</p>
+      <p>Cliente: {{booking.tutenUserClient.firstName}} {{booking.tutenUserClient.lastName}}</p>
+      <p>Fecha de Creacion</p>
+      <p>{{booking.bookingTime | date: 'dd-MM-yyyy'}}</p>
+      <p>Direccion</p>
+      <p>{{ booking.locationId.streetAddress }}</p>
+      <p>Precio {{booking.bookingPrice}}</p>
+    </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+
+<ng-template #noResults>
+  <ion-item>
+    No se encontraron registros asociados a ese correo.
+  </ion-item>
+</ng-template>
