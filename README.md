@@ -11,13 +11,13 @@
 
 ##Pasos para correr el proyecto.
 
-1.- Se realeza la descarga desde el repositorio.
+1.- Se realiza la descarga desde el repositorio.
 
 2.- Ejecutar en terminal el comando npm install.
 
 3.- Ejecutar en terminal el comando npm start para iniciar el servidor virtual (en la ubicacion de la carpeta)
 
-4.- Abrir el navegador y colocar la direccion https://localhost/4200
+4.- Abrir el navegador y colocar la direccion https://localhost/8100
 
   **Nota: de presentar algun incoveniente con los comandos en la terminal prueba ejecutando el terminal en modo administrador.**
 
